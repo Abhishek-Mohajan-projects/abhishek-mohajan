@@ -1,0 +1,305 @@
+* {
+  list-style-type: none;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+body {
+  margin: 0;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+  scroll-behavior: smooth;
+}
+
+.body {
+  background: linear-gradient(-45deg, #34495e, #3c6382, #192a56, #40739e);
+  background-size: 300% 300%;
+  animation: gradient 5s ease infinite;
+  width: 100%;
+  min-height: 100vh;
+}
+
+::selection {
+  background-color: #22d3ee;
+}
+
+.spinner-wrapper {
+  width: 100%;
+  height: 100%;
+  background-color: #222;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.spinner {
+  position: relative;
+  width: 8rem;
+  height: 8rem;
+  border-radius: 50%;
+}
+
+.spinner::before,
+.spinner:after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+}
+
+.spinner:before {
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(90deg, #c59d5f 0%, #515151 100%);
+  animation: spin 0.3s infinite linear;
+}
+
+.spinner:after {
+  width: 90%;
+  height: 90%;
+  background-color: gray;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* body animation */
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+ul li a.active {
+  color: palegoldenrod;
+}
+
+/* css animation */
+.span {
+  transition: 0.3s all;
+}
+
+.span:hover {
+  color: orange;
+}
+
+.frames {
+  animation: fadeIn 2s infinite;
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0.4;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* responsive sidebar ----> */
+
+@media screen and (max-width: 992px) {
+  .sideBar {
+    position: fixed;
+    width: 100%;
+    padding: 10px;
+    margin: auto;
+    z-index: 9;
+    top: 0;
+    right: 0%;
+    background-color: purple;
+  }
+
+  .css-hsxgv5 {
+    width: 0 !important;
+    padding: 20px;
+    background: var(--chakra-colors-transparent);
+  }
+  .stack {
+    margin-left: -0.8em;
+    margin-top: 5px !important;
+  }
+  .noneSidebar {
+    display: none;
+  }
+  .sideBar ul li a {
+    font-size: 1.1rem;
+  }
+}
+
+/* @media screen and (max-width: 500px) {
+  .listItem {
+    margin-right: 1.3em !important;
+  }
+} */
+
+/* Skills Css-----> */
+
+.skill-number {
+  font-size: 5rem;
+}
+.skill-title {
+  margin-left: 1em;
+  font-size: 2rem;
+}
+
+@media screen and (max-width: 400px) {
+  .skill-number {
+    font-size: 4rem;
+  }
+  .skill-title {
+    font-size: 1.7rem;
+  }
+}
+
+.skill-item::before,
+.skill-item::after {
+  background-color: cyan;
+  bottom: 0;
+  content: "";
+  height: 1px;
+  left: 0;
+  position: absolute;
+}
+.skill-item::before {
+  opacity: 0.4;
+  transition: 1.5s;
+  width: 0;
+}
+.skill-item:hover::after {
+  width: 100%;
+}
+.skill-item.reveal::before {
+  width: 0%;
+  animation-name: move;
+  animation-duration: 2s;
+  animation-fill-mode: both;
+}
+
+@keyframes move {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+}
+.skill-item::after {
+  background-color: #ff6f00;
+  transition: all 0.5s;
+  width: 0;
+}
+.skill-item {
+  position: relative;
+}
+
+.skillsFlex {
+  display: flex;
+  gap: 10;
+  align-items: baseline;
+}
+
+.skills-left,
+.skills-right {
+  display: flex;
+  flex-direction: column;
+  gap: 10;
+}
+
+/* Animation */
+
+.fadeInBottom2 {
+  animation-name: fadeInBottom2;
+  animation-duration: 2s;
+  animation-fill-mode: both;
+}
+@keyframes fadeInBottom2 {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.fadeInBottom {
+  animation-name: fadeInBottom;
+  animation-duration: 2s;
+  animation-fill-mode: both;
+}
+
+@keyframes fadeInBottom {
+  from {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.fadeInBottom3 {
+  animation-name: fadeInBottom3;
+  animation-duration: 2s;
+  animation-delay: 1s;
+  animation-fill-mode: both;
+}
+
+@keyframes fadeInBottom3 {
+  from {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.fadeInBottom4 {
+  animation: fadeInBottom4 2s infinite;
+  animation-delay: 1s;
+  animation-fill-mode: both;
+}
+
+@keyframes fadeInBottom4 {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* languages and tools responsive */
+@media screen and (max-width: 480px) {
+  .size {
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .noLink {
+    display: none;
+  }
+}
